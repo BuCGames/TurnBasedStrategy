@@ -16,7 +16,7 @@ $("form").on("submit", function(e) {
         console.log(data);
         switch ($form.attr("name")) {
             case "registration":
-                alert('udało się, robimy dalej!')l
+                alert('udało się, robimy dalej!');
                 registration(data);
                 break;
             default:
