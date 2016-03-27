@@ -1,0 +1,16 @@
+body {
+    background-image: url("../web/assets/img/Menu.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    height: 100%;
+    max-width: 75em;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.mapWrapper {
+    
+}

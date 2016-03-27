@@ -2,7 +2,7 @@
 
 const CODE_ALREADY_REGISTERED=0;
 const CODE_INVALID_DATA=1;
-const CODE_SUCCESS=2; 
+const CODE_SUCCESS=2;
 
 session_start();
 
@@ -10,9 +10,9 @@ class AppDB extends SQLite3
 {
 	function __construct()
 	{
-		$this->open('app.db');		 
+		$this->open('app.db');
 	}
-	
+
 	function checkIfTableExists($tableName)
 	{
 		$result = $this->query(
@@ -22,21 +22,21 @@ class AppDB extends SQLite3
 			. 'AND name = \'' . $tableName . '\'')
 			->fetchArray(SQLITE3_ASSOC)
 		;
-		
-		
+
+
 		if ($result === false) {
 			return false;
 		}
-		
+
 		return true;
 	}
-	
-	
-}   
+
+
+}
 class Response {
 	public $code;
 	public $message;
-	
+
 	public function __construct($code,$message)
 	{
 		$this->code = $code;
@@ -69,7 +69,7 @@ $sql = 'INSERT INTO users (session_id,username,created_at)'
 	  . '\'' . $dateString . '\''
   . ')';
 
-  
+
  /*
 $query = $db->query('SELECT * FROM users');
 
@@ -92,7 +92,7 @@ if (isset($_SESSION['username'])) {
 } else {
 	if (isset($_POST['username']) and $_POST['username'] != '') {
 		$_SESSION['username'] = $_POST['username'];
-		$response = new Response(CODE_SUCCESS, 'pomyslnie zalogowano');	
+		$response = new Response(CODE_SUCCESS, 'pomyslnie zalogowano');
 
 		$now = new DateTime();
 		$dateString = $now->format('Y-m-d H:i:s');
@@ -102,7 +102,7 @@ if (isset($_SESSION['username'])) {
 			  . '\''. $_POST['username'] . '\','
 			  . '\'' . $dateString . '\''
 		  . ')';
-  
+
 		$db->exec($sql);
 
 	} else {
