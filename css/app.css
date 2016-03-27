@@ -12,5 +12,30 @@ body {
 }
 
 .mapWrapper {
-    
+    height: 666px;
+    width: 666px;
+    margin: 0 auto;
+    background-image: url("../web/assets/img/Do mapy.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 33px;
+}
+
+.mapWrapper .row {
+    height: 150px;
+    margin: 0;
+}
+.mapWrapper .columns {
+    height: 150px;
+}
+.field {
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ground {
+    background-image: url("../web/assets/img/Teren przechodny (1).png");
+}
+.water {
+    background-image: url("../web/assets/img/Teren nieprzechodny.png");
 }

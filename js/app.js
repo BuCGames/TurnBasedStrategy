@@ -15,21 +15,42 @@ function registration(data) {
 
 function renderMap()
 {
-    $.ajax({
-            url: "/mapa.php",
-            method: "get",
-            dataType: "json",
-        })
-        .done(function(mapa) {
-            console.log(mapa);
-        })
-        .fail(function() {
-            alert("ERROR: template not found!");
+    var $inserting = insertContextTemplate("/templates/gameboard.html");
+    $inserting.promise().done(function() {
+        $.ajax({
+                url: "/Map.php",
+                method: "get",
+                dataType: "json",
+            })
+            .done(function(mapData) {
+                var mapTemplate = getMapTemplate(mapData);
+                console.log(mapTemplate);
+            })
+            .fail(function() {
+                alert("ERROR: map data not fetched!");
+            });
+    });
+}
+
+function getMapTemplate(mapData) {
+    var $mapTemplate = $(".mapWrapper");
+
+    $mapTemplate.find(".row").each(function(yIndex, row) {
+        $(row).find(".field").each(function(xIndex, field) {
+            console.log(yIndex, row, xIndex, field);
+            if (mapData[yIndex][xIndex] === 0) {
+                $(field).addClass('water');
+            } else {
+                $(field).addClass('ground');
+            }
         });
+    });
+
+    return mapData;
 }
 
 function insertContextTemplate(url) {
-    $.ajax({
+    return $.ajax({
             url: url,
             method: "get",
             dataType: "html",
