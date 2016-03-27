@@ -58,34 +58,6 @@ $db = new AppDB();
 	$db->exec($sql);
 }
 
-$username = 'Kornel';
-$sessionId = 'asdasdasdasdasdasd';
-
-
-$sql = 'INSERT INTO users (session_id,username,created_at)'
-  . 'VALUES ('
-	  . '\'' . session_id() . '\','
-	  . '\''. $username . '\','
-	  . '\'' . $dateString . '\''
-  . ')';
-
-  
- /*
-$query = $db->query('SELECT * FROM users');
-
-while($row = $query->fetchArray(SQLITE3_ASSOC) ){
-      echo "id = ". $row['id'] . '<br>';
-      echo "session_id = ". $row['session_id'] .'<br>';
-      echo "username = ". $row['username'] .'<br>';
-      echo "created_at =  ".$row['created_at'] .'<br>';
-	  echo '<hr>';
-}
-
-$db->close();
-die;
-*/
-
-
 
 if (isset($_SESSION['username'])) {
 	$response = new Response(CODE_ALREADY_REGISTERED, 'sesja trwa');
