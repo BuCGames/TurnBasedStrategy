@@ -1,15 +1,11 @@
 <?php
 
-const CODE_ALREADY_REGISTERED=0;
-const CODE_INVALID_DATA=1;
-const CODE_SUCCESS=2; 
-
 session_start();
 
-class AppDB extends SQLite3 {
+class UnitsDB extends SQLite3{
 	function __construct()
 	{
-		$this->open('app.db');		 
+		$this->open('Units.db');		 
 	}
 	
 	function checkIfTableExists($tableName)
@@ -21,6 +17,7 @@ class AppDB extends SQLite3 {
 			. 'AND name = \'' . $tableName . '\'')
 			->fetchArray(SQLITE3_ASSOC)
 		;		
+		
 		if ($result === false) {
 			return false;
 		}		
@@ -28,31 +25,22 @@ class AppDB extends SQLite3 {
 	}	
 }   
 
-class Response {
-	public $code;
-	public $message;
-	
-	public function __construct($code,$message)
-	{
-		$this->code = $code;
-		$this->message = $message;
-	}
-}
+$db = new UnitsDB();
 
-$db = new AppDB();
-
- if(!$db->checkIfTableExists('users')) {
-    $sql = 'CREATE TABLE users '
+ if(!$db->checkIfTableExists('units')) {     //jednostki
+ 
+    $sql = 'CREATE TABLE uunits'
 		. '( '
-		. 'id			INTEGER  PRIMARY KEY AUTOINCREMENT	NOT NULL, '
-		. 'session_id  	STRING    							NOT NULL, '
-		. 'username 	STRING     							NOT NULL, '
-		. 'created_at 	STRING 					  				  '
+		. 'id			INTEGER  PRIMARY KEY AUTOINCREMENT	NOT NULL, '    //jednostki
+		. 'session_id  	STRING    							NOT NULL, '    //jednostki
+		. 'username 	STRING     							NOT NULL, '		//jednostki
+		. 'created_at 	STRING 					  				  '			//jednostki
 		. ')';
 
 	$db->exec($sql);
 }
 
+/*             //caly iff
 if (isset($_SESSION['username'])) {
 	$response = new Response(CODE_ALREADY_REGISTERED, 'sesja trwa');
 } else {
@@ -75,5 +63,7 @@ if (isset($_SESSION['username'])) {
 		$response = new Response(CODE_INVALID_DATA, 'wprowadz poprawne dane');
 	}
 }
+
+*/
 
 echo json_encode ($response);
