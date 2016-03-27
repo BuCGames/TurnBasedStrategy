@@ -42,7 +42,7 @@ session_start();
    dump($mapa);} 
    */
    
-	//OTWARCIE BAZY DANYCH
+	//NOWA BAZA DANYCH
 	/*
 	
    {session_start();
