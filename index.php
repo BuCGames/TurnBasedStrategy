@@ -1,5 +1,6 @@
-<?php
-
-echo 'awfsaw';
-
-phpinfo();
+<html>
+<head> kupa </head>
+<body>
+kamil kupa
+</body>
+</html>
