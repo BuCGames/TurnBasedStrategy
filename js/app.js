@@ -8,11 +8,12 @@ $("form").on("submit", function(e) {
     var $form = $(this);
 
     $.ajax({
-        url: $(this).attr("action"),
-        method: $(this).attr("method"),
-        data: $(this).serialize(),
+        url: $form.attr("action"),
+        method: $form.attr("method"),
+        data: $form.serialize(),
     })
     .done(function(data) {
+        console.log(data);
         switch ($form.attr("name")) {
             case "registration":
                 alert('udało się, robimy dalej!')l
@@ -26,3 +27,7 @@ $("form").on("submit", function(e) {
         alert("ERROR: request failed!");
     });
 });
+
+function registration(data) {
+    alert("KOD:"+data.code+"\n"+"MSG:"+data.message);
+}
