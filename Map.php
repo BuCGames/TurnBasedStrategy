@@ -11,7 +11,7 @@
    CONST WODA = 0;
    
    $mapa = [
-	 [ZIEMIA, ZIEMIA, 	ZIEMIA, WODA],
+	 [WODA, WODA, 	WODA, WODA],
 	 [ZIEMIA, ZIEMIA, 	WODA, 	WODA],
 	 [ZIEMIA, WODA,		WODA, 	WODA],
 	 [ZIEMIA, ZIEMIA, 	WODA, 	WODA],
