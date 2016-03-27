@@ -29,5 +29,7 @@ $("form").on("submit", function(e) {
 });
 
 function registration(data) {
-    alert("KOD:"+data['code']+"\n"+"MSG:"+data['message']);
+    var result = JSON.parse(data);
+    console.log(result.code);
+    alert("KOD:"+result.code+"\n"+"MSG:"+result.message);
 }
