@@ -29,5 +29,5 @@ $("form").on("submit", function(e) {
 });
 
 function registration(data) {
-    alert("KOD:"+data.code+"\n"+"MSG:"+data.message);
+    alert("KOD:"+data['code']+"\n"+"MSG:"+data['message']);
 }
