@@ -23,9 +23,10 @@ const CODE_SUCCESS=2;
 
 session_start();
 if (isset($_SESSION['username'])) {
-	$response = res(CODE_ALREADY_REGISTERED, 'sesja trwa');
+		$response = res(CODE_ALREADY_REGISTERED, 'sesja trwa');
 } else {
-	if (isset($_POST['username'])) {
+	if (isset($_POST['username']) and $_POST['username'] != '') {
+		$_SESSION['username'] = $_POST['username'];
 		$response = res(CODE_SUCCESS, 'pomyslnie zalogowano');
 	
 	} else {
