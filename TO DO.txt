@@ -1,0 +1,42 @@
+# TurnBasedStrategy by Konrad, Kornel, Kamil Mietelscy
+
+
+
+TO DO LIST
+
+
+SERWER:
+*Przejmowanie danych od klienta                         WIP
+*Użytkownick                                            DONE
+*Serwer zwracajcy napis                                 DONE
+*Zapis i odczyt bazy danych                             DONE
+
+
+
+
+
+
+
+
+
+
+KLIENT
+*Rozpisanie logiki frontendu                            TO DO
+*Przygotowanie silnika renderujcego                     WIP
+*Przygotowanie srodowiska                               DONE
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASETY
+*Podstawowe tekstury                                    DONE
+*Podstawowe dźwiki                                      DONE
